@@ -1,0 +1,12 @@
+[21-Apr-2017 02:12:17 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/gooto785/public_html/wp-content/themes/salient/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/gooto785/public_html/wp-content/themes/salient/index.php on line 1
+[22-Apr-2017 02:10:43 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/gooto785/public_html/wp-content/themes/salient/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/gooto785/public_html/wp-content/themes/salient/index.php on line 1
+[23-Apr-2017 02:15:20 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/gooto785/public_html/wp-content/themes/salient/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/gooto785/public_html/wp-content/themes/salient/index.php on line 1

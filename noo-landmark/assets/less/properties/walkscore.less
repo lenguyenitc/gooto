@@ -1,0 +1,36 @@
+/**
+ * Style box Walkscore
+ */
+.noo-prpoerty-walkscore {
+	background: #fff;
+	border: 1px solid @border-color;
+	padding: 40px 40px 55px;
+	margin: 30px 0 0 0;
+	@media ( max-width: 767px ){
+		padding: 20px 15px;
+	}
+	.noo-walkscore-title {
+		position: relative;
+	    margin: 0 0 30px;
+		border-bottom: 1px solid @border-color;
+		.noo-title-box {
+			color: #3a3f4c;
+			font-size: 26px;
+			text-transform: uppercase;
+			font-weight: 500;
+			padding: 20px 0 25px 0;
+			margin: 0;
+		}
+	}
+	.walkscore_details {
+		img {
+		    vertical-align: -2px;
+		}
+		a {
+			color: @secondary-color;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}

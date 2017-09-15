@@ -1,0 +1,134 @@
+/**
+ * Style rating
+ */
+.noo-box-rating {
+	margin: -10px 0 25px;
+	.clearfix();
+	> label {
+		float: left;
+		color: #515666;
+		font-size: 14px;
+		font-weight: 500;
+		margin-right: 20px;
+	    line-height: 35px;
+	    vertical-align: middle;
+	}
+	&.validate-error {
+
+	}
+	.noo-property-notice {
+	    padding: 15px 0;
+	    font-size: 13px;
+	    font-style: italic;
+	}
+}
+.noo-rating {
+	margin: 0;
+	padding: 0;
+	border: none;
+	float: left;
+	label {
+		margin: 0;
+		padding: 0;
+	}
+	> input {
+		display: none;
+	}
+	> label{
+		color: #ddd; 
+		float: right;
+		cursor: pointer;
+		font-weight: 300;
+		&:before {
+			margin: 5px;
+		  	font-size: 1.25em;
+		  	font-family: "Ionicons";
+		  	display: inline-block;
+		  	content: "\f4b3"; 
+	  		// margin: 5px;
+	  		// font-size: 18px;
+	  		// line-height: 24px;
+	  		// // letter-spacing: 1.5px;
+	  		// font-family: 'Ionicons';
+	  		// display: inline-block;
+	  		// content: "\f4b3";
+		}
+	}
+	> .half {
+		&:before { 
+		  	content: "\f4b1";
+			position: absolute;
+		}
+	}
+	> input:checked ~ label, /* show gold star when clicked */
+	&:not(:checked) > label:hover, /* hover current star */
+	&:not(:checked) > label:hover ~ label {
+		color: @secondary-color;
+		font-weight: 300;
+	}
+	
+	> input:checked + label:hover, /* hover current star when changing rating */
+	> input:checked ~ label:hover,
+	> label:hover ~ input:checked ~ label, /* lighten current selection */
+	> input:checked ~ label:hover ~ label {
+		color: lighten(@secondary-color, 15%);
+		font-weight: 300;
+	} 
+}
+
+.noo-stars-rating {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	.translate(0, -10px);
+	&:before {    		
+	    background-color: @secondary-color;    	
+		content: '';
+	    width: 90px;
+	    height: 16px;
+	    display: inline-block;
+	    -webkit-mask: url(../svg/star-outline.svg) no-repeat 50% 50%;
+	    mask: url(../svg/star-outline.svg) no-repeat 50% 50%;
+	    -webkit-mask-size: cover;
+	    mask-size: cover;
+	    position: absolute;
+	}
+	span {
+		display: inline-block;
+		position: absolute;
+	    left: 0;
+	    overflow: hidden;
+		&:before {
+			width: 90px;
+			content: '';
+			z-index: 9;		
+		    background-color: @secondary-color;
+		    height: 16px;
+		    display: inline-block;
+		    -webkit-mask: url(../svg/star.svg) no-repeat 50% 50%;
+		    mask: url(../svg/star.svg) no-repeat 50% 50%;
+		    -webkit-mask-size: cover;
+		    mask-size: cover;
+		}
+	}
+}
+
+// .details-rating {
+// 	.stars {
+// 		float: left;
+// 		margin-top: 5px;
+// 	}
+// 	.stars {
+// 		background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjREREREREIiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
+// 		height: 15px;
+// 		width: 75px;
+// 		clear: both;
+// 		span {
+// 			display: block;
+// 			background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
+// 			height: 15px;
+// 			width: 75px;
+// 		}
+// 	}
+// 	.clearfix();
+// }
